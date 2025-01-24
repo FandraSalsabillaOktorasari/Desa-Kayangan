@@ -264,15 +264,11 @@ button.btn-outline-primary:active {
   color: inherit; /* Warna teks mengikuti tombol */
 }
 
-.showcase {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
 .showcase .showcase-text {
   padding: 3rem;
 }
 .showcase .showcase-img {
-  height: 30rem;
+  min-height: 30rem;
   background-size: cover;
   background-position: center;
 }
@@ -363,6 +359,7 @@ p {
   height: 100%; /* Menjaga rasio gambar */
   border-radius: 0.5rem; /* Menambahkan efek sudut melengkung (opsional) */
   object-fit: cover; /* Menjaga fokus gambar tetap terlihat meskipun ukurannya dipotong */
+  object-position: center;
 }
 
 @media (max-width: 768px) {
