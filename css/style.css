@@ -1,0 +1,380 @@
+.bg-gradient {
+    background: #ff8c00 !important;
+  }
+  
+  /* Warna teks pada navbar */
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-weight: 500;
+  }
+  
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffd700;
+    text-decoration: underline;
+  }
+  
+  /* Responsive navbar brand spacing */
+  .navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  /* Aktifkan efek untuk menu yang sedang aktif */
+  .nav-link.active {
+    color: #ffd700;
+    font-weight: bold;
+    border-bottom: 2px solid #ffd700;
+  }
+
+/* 1. Animasi slide in untuk navbar */
+@keyframes slideInFromTop {
+  0% {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.navbar {
+  animation: slideInFromTop 1s ease-out;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2; /* Navbar berada di atas gambar */
+}
+
+/* 2. Animasi fade in untuk logo dan menu */
+.navbar-brand, .navbar-nav .nav-link {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* 3. Hover effect pada nama desa */
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFFFFF; /* Putih */
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #F2A900; /* Kuning Tua */
+  transform: scale(1.1); /* Zoom in effect */
+  text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff; /* Outline putih */
+}
+
+/* 4. Animasi klik pada nama desa (melompat kiri-kanan dengan efek rotasi dan bounce) */
+@keyframes jumpRotateBounce {
+  0% {
+      transform: rotate(-10deg) skewX(15deg); /* Posisi awal miring, kanan terangkat */
+  }
+  20% {
+      transform: rotate(10deg) skewX(-15deg); /* Posisi terbalik, kanan di bawah */
+  }
+  30% {
+      transform: rotate(-10deg) skewX(15deg); /* Kembali ke posisi awal */
+  }
+  35% {
+    transform: rotate(10deg) skewX(-15deg); /* Posisi terbalik, kanan di bawah */
+  }
+  40% {
+    transform: rotate(-10deg) skewX(15deg); /* Kembali ke posisi awal */
+  }
+  43% {
+  transform: rotate(10deg) skewX(-15deg); /* Posisi terbalik, kanan di bawah */
+  }
+  46% {
+    transform: rotate(-10deg) skewX(15deg); /* Kembali ke posisi awal */
+  }
+  47% {
+  transform: rotate(10deg) skewX(-15deg); /* Posisi terbalik, kanan di bawah */
+  }
+  48% {
+    transform: rotate(-10deg) skewX(15deg); /* Kembali ke posisi awal */
+  }
+  49% {
+  transform: rotate(10deg) skewX(-15deg); /* Posisi terbalik, kanan di bawah */
+  }
+  50% {
+    transform: rotate(0deg) skewX(0deg); /* Posisi terbalik, kanan di bawah */
+    }
+  60% {
+      transform: rotate(0deg) skewX(0deg); /* Posisi terbalik, kanan di bawah */
+  }
+  70% {
+        transform: rotate(0deg) skewX(0deg); /* Posisi terbalik, kanan di bawah */
+  }
+  80% {
+    transform: rotate(0deg) skewX(0deg); /* Posisi terbalik, kanan di bawah */
+  }
+  90% {
+  transform: rotate(0deg) skewX(0deg); /* Posisi terbalik, kanan di bawah */
+  }
+  100% {
+    transform: rotate(0deg) skewX(0deg); /* Kembali ke posisi awal */
+  }
+}
+
+/* Menerapkan animasi ke logo saat diklik */
+.navbar-brand.clicked {
+  animation: jumpRotateBounce 1s ease-in-out;
+}
+
+/* Styling untuk navbar */
+.navbar {
+  background: #FFB20F; /* Gradasi oranye */
+  padding: 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #F2A900; /* Kuning Tua */
+  transform: scale(1.1); /* Zoom effect */
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh; /* Tinggi gambar hero */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 0; /* Menghapus margin agar tidak ada white space */
+}
+
+/* Background Image */
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/latar_website.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%); /* Menggelapkan gambar */
+  z-index: 1;
+}
+
+/* Text */
+.hero-text {
+  position: relative;
+  z-index: 2; /* Pastikan teks di atas gambar */
+  font-size: 2.5rem; /* Ukuran font */
+  font-weight: bold; /* Tebal font */
+  opacity: 0; /* Awalnya transparan */
+  transform: translateY(20px); /* Awalnya sedikit turun */
+  animation: fadeIn 1.5s ease-out forwards; /* Animasi fade in */
+}
+
+.fw-bold {
+  font-size: 5rem;
+}
+
+/* Styling untuk Profil Desa Section */
+.profil-desa {
+  min-height: 90vh; /* Tinggi hampir memenuhi layar */
+  padding: 60px 0;
+  background-color: #dadada;
+  display: flex;
+  align-items: center; /* Konten di tengah secara vertikal */
+  justify-content: center; /* Konten di tengah secara horizontal */
+}
+
+/* Bagian kiri (gambar) */
+.profil-desa img {
+  width: 100%; /* Gambar mengisi kolom sepenuhnya */
+  height: auto; /* Menjaga proporsi gambar */
+  border-radius: 10px; /* Sudut melengkung */
+}
+
+/* Bagian kanan (teks) */
+.profil-text {
+  padding-left: 30px;
+}
+
+/* Sub heading styling */
+.sub-heading {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Heading styling */
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Tombol Selengkapnya */
+button.btn-outline-primary {
+  border-color: #044389; /* Warna border */
+  color: #044389; /* Warna teks */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button.btn-outline-primary:hover {
+  background-color: #57C4E5; /* Warna background saat hover */
+  color: #fff; /* Warna teks saat hover */
+  border-color: #57C4E5; /* Warna border saat hover */
+}
+
+button.btn-outline-primary:active {
+  background-color: #044389; /* Warna saat tombol aktif */
+  color: #fff;
+  border-color: #044389; /* Warna border saat aktif */
+}
+
+.custom-button {
+  border: none; /* Hilangkan border jika tidak diinginkan */
+  background-color: transparent; /* Atur warna latar belakang */
+  color: inherit; /* Warna teks mengikuti elemen induk */
+  padding: 0.5rem 1rem; /* Sesuaikan padding */
+  font-size: 1rem; /* Ukuran font */
+}
+
+.custom-button a {
+  text-decoration: none; /* Hilangkan garis bawah pada teks link */
+  color: inherit; /* Warna teks mengikuti tombol */
+}
+
+.showcase {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.showcase .showcase-text {
+  padding: 3rem;
+}
+.showcase .showcase-img {
+  height: 30rem;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+/* Footer Styling */
+.footer-section {
+  background-color: #044389; /* Warna biru gelap */
+  color: #fff;
+  padding: 40px 0;
+  font-size: 0.9rem;
+}
+
+.footer-section .footer-logo img {
+  max-width: 150px;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #57C4E5; /* Warna biru muda */
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer-section a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-section .col-md-4 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+p {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.gallery {
+  padding: 2rem 0; /* Memberikan ruang atas dan bawah untuk section */
+}
+.gallery-item {
+  height: 15rem;
+}
+.gallery .row {
+  display: flex;
+  flex-wrap: wrap; /* Membuat elemen tetap di baris baru jika terlalu banyak */
+  gap: 1rem; /* Memberikan jarak antar gambar */
+  justify-content: center; /* Gambar sejajar di tengah */
+}
+
+.gallery .col {
+  flex: 1 1 calc(25% - 1rem); /* Membagi lebar menjadi 4 bagian dengan gap 1rem */
+  max-width: calc(25% - 1rem); /* Lebar maksimal setiap kolom */
+  box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
+}
+
+.gallery img {
+  width: auto; /* Memastikan gambar memenuhi kolom */
+  height: 100%; /* Menjaga rasio gambar */
+  border-radius: 0.5rem; /* Menambahkan efek sudut melengkung (opsional) */
+  object-fit: cover; /* Menjaga fokus gambar tetap terlihat meskipun ukurannya dipotong */
+}
+
+@media (max-width: 768px) {
+  .gallery .col {
+    flex: 1 1 calc(50% - 1rem); /* 2 kolom untuk layar lebih kecil */
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery .col {
+    flex: 1 1 100%; /* 1 kolom untuk layar kecil */
+    max-width: 100%;
+  }
+}
