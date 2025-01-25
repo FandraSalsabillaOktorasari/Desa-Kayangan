@@ -188,6 +188,12 @@
   animation: fadeIn 1.5s ease-out forwards; /* Animasi fade in */
 }
 
+@media (max-width: 768px) {
+  .hero-text h1{
+    font-size: 2.5rem;
+  }
+}
+
 .fw-bold {
   font-size: 5rem;
 }
@@ -354,12 +360,19 @@ p {
   box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
 }
 
-.gallery img {
-  width: auto; /* Memastikan gambar memenuhi kolom */
-  height: 100%; /* Menjaga rasio gambar */
-  border-radius: 0.5rem; /* Menambahkan efek sudut melengkung (opsional) */
-  object-fit: cover; /* Menjaga fokus gambar tetap terlihat meskipun ukurannya dipotong */
-  object-position: center;
+.gallery-item img {
+  width: 100%; /* Mengisi penuh container kolom */
+  height: 200px; /* Tinggi tetap untuk semua gambar */
+  object-fit: cover; /* Fokus di tengah dan memotong bagian berlebih */
+  border-radius: 5px; /* Opsional: sudut melengkung */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opsional: bayangan untuk tampilan menarik */
+}
+
+h3 {
+  font-size: 2rem; /* Ukuran font untuk judul */
+  font-weight: bold; /* Menebalkan teks */
+  color: #333; /* Warna teks */
+  margin-bottom: 20px; /* Memberikan jarak bawah dari gambar */
 }
 
 @media (max-width: 768px) {
@@ -374,4 +387,49 @@ p {
     flex: 1 1 100%; /* 1 kolom untuk layar kecil */
     max-width: 100%;
   }
+}
+
+.custom-card {
+  width: 18rem; /* Lebar kartu */
+  height: 25rem; /* Tinggi kartu */
+  background-color: white; /* Latar belakang putih untuk kartu */
+  border-radius: 10px; /* Sudut yang lebih halus */
+  overflow: hidden; /* Menyembunyikan gambar yang melebihi batas */
+}
+
+.custom-card-img-top {
+  width: 100%; /* Membuat gambar memenuhi lebar kartu */
+  height: 80%; /* Menentukan tinggi gambar, sesuai kebutuhan */
+  object-fit: cover; /* Memotong gambar jika terlalu besar, menjaga fokus di tengah */
+}
+
+.custom-card-body {
+  padding: 0.5rem; /* Memberikan padding sedikit agar isi kartu tidak terlalu rapat */
+}
+
+.custom-card-title, .custom-card-text {
+  text-align: center;
+  color: #333; /* Mengubah warna teks menjadi lebih gelap agar terlihat jelas */
+}
+
+.carousel-inner {
+  display: flex;
+}
+
+.carousel-item {
+  display: flex;
+}
+
+.carousel-item .custom-card {
+  margin-right: 1rem; /* Memberikan jarak antar kartu */
+}
+
+.container-fluid {
+  padding-left: 0 !important;  /* Menghilangkan jarak kiri pada section */
+  padding-right: 0 !important; /* Menghilangkan jarak kanan pada section */
+  margin-right: 0 !important;
+}
+
+.bg-primary {
+  background-color: #044389 !important; /* Warna biru */
 }
